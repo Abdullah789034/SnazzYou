@@ -11,6 +11,8 @@ import Defi from "./Defi";
 import FinanceDetails from "./FinanceDetails";
 import Blockchain from "./Blockchain";
 import BookCall from "./BookCall";
+import CryptoHit from "./CryptoHit";
+import WorkDetails from "./CapitalClubNumbers";
 
 const LandingPage = () => {
   return (
@@ -110,6 +112,8 @@ const LandingPage = () => {
         <span className="font-bold text-2xl text-center font-sans-serif" style={{ fontFamily: "Montserrat" }}>JOIN CAPITALS CLUB TODAY AND EMBARK ON A JOURNEY <br></br> TOWARDS FINANCIAL FREEDOM AND PROSPERITY</span>
       </div>
       <BookCall />
+      <CryptoHit />
+      <WorkDetails />
     </div>
   );
 };

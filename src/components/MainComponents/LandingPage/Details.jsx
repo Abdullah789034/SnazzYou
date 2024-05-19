@@ -3,7 +3,7 @@ import bgImg from "../../../assets/images/bitcoin-image-in-mobile.jpg";
 
 const Details = () => {
     return (
-        <div className='w-full h-[620px] container' style={{ backgroundImage: `url(${bgImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className='w-full h-[620px] ' style={{ backgroundImage: `url(${bgImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className='flex flex-wrap'>
                 <div className='md:w-1/2  md:ml-16 mt-10'>
                     <h2 className=" w-3/4 float-right mr-8 text-2xl font-bold text-white">
