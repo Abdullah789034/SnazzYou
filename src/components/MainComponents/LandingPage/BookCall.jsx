@@ -4,7 +4,7 @@ import callImg from '../../../assets/images/Book-a-Call.png';
 const BookCall = () => {
     return (
         <>
-            <div className='w-full h-[550px]' style={{ backgroundColor: 'black' }}>
+            <div className='w-full h-[550px]'>
                 <div className=' flex' >
                     <div className='w-1/2 flex items-center justify-center p-4'>
                         <div className="flex flex-col justify-center w-3/4 h-auto p-4 space-y-4 text-white">
