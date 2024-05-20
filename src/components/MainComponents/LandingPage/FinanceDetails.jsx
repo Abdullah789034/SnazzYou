@@ -3,15 +3,15 @@ import joinNow from '../../../assets/images/Join-Now-Button-1.png';
 
 const FinanceDetails = () => {
     return (
-        <div className="flex items-center justify-center w-full h-[620px] text-white"
+        <div className="flex flex-col md:flex-row items-center justify-center w-full h-[620px] text-white"
             style={{ backgroundColor: "#120B01" }}
         >
             {/* Left empty side */}
-            <div className="w-1/2"></div>
+            <div className="w-full md:w-1/2"></div>
 
             {/* Right side with content */}
-            <div className="w-1/2 flex flex-col items-center mr-8 space-y-8 ">
-                <div className=" max-w-screen-lg text-right w-2/3">
+            <div className="w-full md:w-1/2 flex flex-col items-center md:mr-8 space-y-8 ">
+                <div className="w-full max-w-screen-lg text-center md:text-right">
                     <h2 className="text-2xl font-bold">
                         Imagine this:{" "}
                         <span className="text-[#fff04f]">Centralised Finance sector</span> is
@@ -21,7 +21,7 @@ const FinanceDetails = () => {
                         communication services, and real estate sectors combined are making.
                     </h2>
                 </div>
-                <div className=" max-w-screen-lg text-right w-2/3">
+                <div className="w-full max-w-screen-lg text-center md:text-right">
                     <p className="text-xl">
                         But here's the kicker: that staggering amount of money is ripe
                         for disruption and redistribution. We're talking about at
@@ -33,7 +33,7 @@ const FinanceDetails = () => {
                         people.
                     </p>
                 </div>
-                <div className="w-2/3 max-w-screen-lg text-right">
+                <div className="w-full max-w-screen-lg text-center md:text-right">
                     <a href="https://londonreal.samcart.com/products/crypto--defi-academy-standard">
                         <img
                             loading="lazy"
