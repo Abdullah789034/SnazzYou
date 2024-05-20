@@ -13,6 +13,12 @@ import Blockchain from "./Blockchain";
 import BookCall from "./BookCall";
 import CryptoHit from "./CryptoHit";
 import WorkDetails from "./CapitalClubNumbers";
+import Team from "./Team";
+import Analytics from "./Analytics";
+import About from "./About";
+import FAQ from "./FAQ";
+import ContactForm from "./ContactForm";
+import Footer from "./Footer";
 
 const LandingPage = () => {
   return (
@@ -114,6 +120,12 @@ const LandingPage = () => {
       <BookCall />
       <CryptoHit />
       <WorkDetails />
+      <Team />
+      <Analytics />
+      <About />
+      <FAQ />
+      <ContactForm />
+      <Footer />
     </div>
   );
 };
