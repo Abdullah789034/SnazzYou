@@ -10,7 +10,7 @@ export default {
     theme: {
       extend: {
         fontFamily: {
-          Poppins: ["Poppins", , "sans-serif"],
+          Montserrat: ["Montserrat", , "sans-serif"],
         },
         colors: {
           primary: {
