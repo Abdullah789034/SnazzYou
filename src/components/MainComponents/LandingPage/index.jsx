@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import clientsCredit from "../../../assets/images/clinets-credits.jpg";
 
 import tIcon from "../../../assets/images/temple-icon.png";
@@ -18,8 +18,10 @@ import ContactForm from "./ContactForm";
 import Footer from "./Footer";
 import JoinNow from "./JoinNow";
 import Hero from "./Hero";
+import ContactFormModal from "../../CommonComponents/contactFormModal";
 
 const LandingPage = () => {
+  const [openContactModal, setOpenContactModal] = useState(false);
   return (
     <div>
       <Hero />
@@ -31,7 +33,7 @@ const LandingPage = () => {
         />
       </div>
 
-      <JoinNow />
+      <JoinNow onButtonClick={() => setOpenContactModal(true)} />
 
       <div className="bg-[#2B2B2B] flex flex-col items-center justify-center gap-5 py-10">
         <img src={tIcon} height={50} width={80}></img>
@@ -82,6 +84,10 @@ const LandingPage = () => {
       <FAQ />
       <ContactForm />
       <Footer />
+      <ContactFormModal
+        isOpen={openContactModal}
+        onClose={() => setOpenContactModal(false)}
+      />
     </div>
   );
 };
