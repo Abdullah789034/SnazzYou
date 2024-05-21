@@ -11,6 +11,7 @@ export default {
       extend: {
         fontFamily: {
           Montserrat: ["Montserrat", , "sans-serif"],
+          Oswald: ["Oswald", , "sans-serif"],
         },
         colors: {
           primary: {
