@@ -12,7 +12,7 @@ const FinanceDetails = () => {
             {/* Right side with content */}
             <div className="w-full md:w-1/2 flex flex-col items-center md:mr-8 space-y-8 ">
                 <div className="w-full max-w-screen-lg text-center md:text-right">
-                    <h2 className="text-2xl font-bold">
+                    <h2 className="text-2xl font-bold font-['Montserrat']">
                         Imagine this:{" "}
                         <span className="text-[#fff04f]">Centralised Finance sector</span> is
                         currently pulling in over{" "}

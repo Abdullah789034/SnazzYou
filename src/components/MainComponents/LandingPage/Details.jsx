@@ -6,7 +6,7 @@ const Details = () => {
         <div className='w-full h-[620px] ' style={{ backgroundImage: `url(${bgImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className='flex flex-wrap'>
                 <div className='md:w-1/2  md:ml-16 mt-10'>
-                    <h2 className=" w-3/4 float-right mr-8 text-2xl font-bold text-white">
+                    <h2 className=" w-3/4 float-right mr-8 text-2xl  text-white font-['Montserrat'] font-[900]">
                         You won't believe what's brewing in the world of finance. Big names like{" "}
                         <span className="text-[#fff04f]">Amazon, Apple, and PayPal</span> are eyeing
                         up cryptocurrencies for their platforms. Some experts even think Bitcoin could

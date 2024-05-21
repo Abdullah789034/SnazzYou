@@ -24,7 +24,11 @@ export default {
             blue: {
               50: "#15212B",
             },
+
           },
+        },
+        letterSpacing: {
+          '2px': '2px',
         },
       },
     },
