@@ -5,35 +5,35 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="bg-[#111A23] sticky top-0 z-50">
-            <div className="container mx-auto flex justify-between items-center p-4">
+        <nav className="bg-[#111A23] sticky top-0 z-50 p-2">
+            <div className="container mx-auto flex justify-between items-center ">
                 <div className="ml-4">
                     {/* Logo */}
-                    <img src={logo} alt="Logo" className="h-20" />
+                    <img src={logo} alt="Logo" className="w-[70px]" />
                 </div>
-                <div className="hidden md:flex space-x-4 items-center">
+                <div className="hidden md:flex space-x-12 items-center -mt-10">
                     {/* Links */}
                     <a href="#about-us" className="text-white relative group -mb-2">
                         About Us
-                        <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-300"></span>
+                        <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full -mb-3 scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-100"></span>
                     </a>
                     <a href="#our-team" className="text-white relative group -mb-2">
                         Our Team
-                        <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-300"></span>
+                        <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full -mb-3 scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-100"></span>
                     </a>
                     <a href="#reviews" className="text-white relative group -mb-2">
                         Reviews
-                        <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-300"></span>
+                        <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full  -mb-3 scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-100"></span>
                     </a>
                     <a href="#faq" className="text-white relative group -mb-2">
                         FAQ
-                        <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-300"></span>
+                        <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full  -mb-3 scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-100"></span>
                     </a>
                     <a href="#contact-us" className="text-white relative group -mb-2">
                         Contact Us
-                        <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-300"></span>
+                        <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full -mb-3 scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-100"></span>
                     </a>
-                    <a href="#try-again" className="bg-[#fff04f] text-black px-4 py-2">Try Again</a>
+                    <a href="#try-again" className="bg-[#fff04f] text-black px-10 py-2">Try App</a>
                 </div>
                 <div className="md:hidden">
                     {/* Mobile menu button */}
