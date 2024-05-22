@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import callImg from "../../../assets/images/Book-a-Call.png";
 import ContactFormModal from "../../CommonComponents/contactFormModal";
 
-const BookCall = () => {
+const BookCall = ({ onButtonClick }) => {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   const handleBookCallClick = () => {
@@ -46,17 +46,17 @@ const BookCall = () => {
               src={callImg}
               alt="Book a Call"
               className="w-2/4 lg:w-1/4 h-auto cursor-pointer"
-              onClick={handleBookCallClick}
+              onClick={onButtonClick}
             />
           </div>
         </div>
       </div>
 
-      <ContactFormModal
+      {/* <ContactFormModal
         isOpen={isContactFormOpen}
         onClose={() => setIsContactFormOpen(false)}
         title="Book A Call"
-      />
+      /> */}
     </>
   );
 };

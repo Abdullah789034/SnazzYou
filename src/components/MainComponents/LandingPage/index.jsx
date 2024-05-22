@@ -22,6 +22,9 @@ import ContactFormModal from "../../CommonComponents/contactFormModal";
 
 const LandingPage = () => {
   const [openContactModal, setOpenContactModal] = useState(false);
+  const opeModal = () => {
+    setOpenContactModal(true);
+  };
   return (
     <div>
       <Hero />
@@ -33,7 +36,7 @@ const LandingPage = () => {
         />
       </div>
 
-      <JoinNow onButtonClick={() => setOpenContactModal(true)} />
+      <JoinNow onButtonClick={opeModal} />
 
       <div className="bg-[#2B2B2B] flex flex-col items-center justify-center gap-5 py-10">
         <img src={tIcon} height={60} width={60}></img>
@@ -61,25 +64,23 @@ const LandingPage = () => {
         </span>
       </div>
       <Defi />
-      <FinanceDetails />
+      <FinanceDetails onButtonClick={opeModal} />
       <Blockchain />
       <div
         style={{ backgroundColor: "#fff04f" }}
         className="relative h-[113px] w-full flex items-center justify-center"
       >
-        <span
-          className=" text-2xl text-center  max-w-[60%] font-['Montserrat'] font-[900]"
-        >
+        <span className=" text-2xl text-center  max-w-[60%] font-['Montserrat'] font-[900]">
           JOIN CAPITALS CLUB TODAY AND EMBARK ON A JOURNEY TOWARDS FINANCIAL
           FREEDOM AND PROSPERITY
         </span>
       </div>
-      <BookCall />
+      <BookCall onButtonClick={opeModal} />
       <CryptoHit />
       <WorkDetails />
       <Team />
       <Analytics />
-      <About />
+      <About onButtonClick={opeModal} />
       <FAQ />
       <ContactForm />
       <Footer />

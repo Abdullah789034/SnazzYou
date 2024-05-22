@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CrossCircledIcon from "../../assets/icons/cross-circled-Icon";
 import CCModal from "./CCModal";
 import { ModalBody, ModalFooter, Input, Button } from "@nextui-org/react";

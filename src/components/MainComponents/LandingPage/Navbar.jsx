@@ -33,7 +33,11 @@ const Navbar = () => {
             Contact Us
             <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full -mb-3 scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-100"></span>
           </a>
-          <a href="#try-again" className="bg-[#fff04f] text-black px-10 py-2">
+          <a
+            className="bg-[#fff04f] text-black px-10 py-2"
+            href="https://captialclub-frontend.vercel.app/"
+            target="_blank"
+          >
             Client Area
           </a>
         </div>
@@ -83,8 +87,9 @@ const Navbar = () => {
             <span className="block h-0.5 bg-[#fff04f] absolute bottom-0 left-0 w-full scale-x-0 group-hover:scale-x-100 transition-transform ease-in duration-300"></span>
           </a>
           <a
-            href="#try-again"
             className="bg-[#fff04f] text-black font-bold px-4 py-2 w-full text-center"
+            href="https://captialclub-frontend.vercel.app/"
+            target="_blank"
           >
             Client Area
           </a>
