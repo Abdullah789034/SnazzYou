@@ -20,6 +20,7 @@ const CryptoHit = () => {
             width="580"
             height="360"
             allow="autoplay"
+            className="w-auto"
           ></iframe>
         </div>
       </div>

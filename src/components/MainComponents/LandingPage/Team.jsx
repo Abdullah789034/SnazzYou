@@ -31,10 +31,10 @@ const Team = () => {
                 We pride ourselves on attracting the best and brightest in the business. <br />
                 These are the people who will help you to achieve a safe and secure path to financial freedom.
             </p>
-            <div className="image_main_container flex flex-wrap justify-center md:justify-between mx-auto w-11/12">
+            <div className="image_main_container flex flex-wrap justify-center mx-auto w-11/12">
                 {teamMembers.map((member, index) => (
                     <div key={index} className="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/3 p-2">
-                        <img src={member.imgSrc} alt={member.name} className="w-full sm:w-3/4 md:w-full" />
+                        <img src={member.imgSrc} alt={member.name} className="w-full sm:w-3/4 md:w-full mx-auto" />
                         <div className="absolute inset-0 flex flex-col justify-center bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity p-4">
                             <div className="text-white text-xl font-bold">{member.name}</div>
                             <div className="text-white text-lg mt-2">{member.role}</div>

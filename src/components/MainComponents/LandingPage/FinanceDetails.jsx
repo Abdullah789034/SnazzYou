@@ -4,7 +4,7 @@ import joinNow from "../../../assets/images/Join-Now-Button-1.png";
 const FinanceDetails = ({ onButtonClick }) => {
   return (
     <div
-      className="flex flex-col md:flex-row items-center justify-center w-full h-[620px] text-white"
+      className="flex flex-col md:flex-row items-center justify-center w-full p-12 text-white"
       style={{ backgroundColor: "#120B01" }}
     >
       {/* Left empty side */}

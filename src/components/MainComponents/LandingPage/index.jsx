@@ -54,10 +54,10 @@ const LandingPage = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="relative h-[113px] w-full flex items-center justify-center"
+        className="relative p-8 w-full flex items-center justify-center"
       >
         <span
-          className="text-4xl text-center font-sans-serif font-['Montserrat'] font-[900]"
+          className="text-3xl text-center font-sans-serif font-['Montserrat'] font-[900]"
           style={{ fontFamily: "Montserrat" }}
         >
           THE FUTURE IS CRYPTO AND DEFI
@@ -68,7 +68,7 @@ const LandingPage = () => {
       <Blockchain />
       <div
         style={{ backgroundColor: "#fff04f" }}
-        className="relative h-[113px] w-full flex items-center justify-center"
+        className="relative p-8 w-full flex items-center justify-center"
       >
         <span className=" text-2xl text-center  max-w-[60%] font-['Montserrat'] font-[900]">
           JOIN CAPITALS CLUB TODAY AND EMBARK ON A JOURNEY TOWARDS FINANCIAL
