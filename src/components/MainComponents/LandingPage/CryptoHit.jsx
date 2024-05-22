@@ -7,11 +7,11 @@ const CryptoHit = () => {
       className="w-full h-[620px] bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImg})` }}
     >
-      <div className="flex flex-col items-center justify-center h-full p-10 text-center text-white">
-        <div className="text-4xl font-bold mt-10 font-['Montserrat']">
+      <div className="flex flex-col items-center justify-center h-full text-center text-white">
+        <div className="text-5xl font-[1000] font-['Montserrat'] ">
           It’s Official.
         </div>
-        <div className="text-[#fff04f] text-4xl">
+        <div className="text-[#fff04f] text-4xl font-bold font-[Oswald] p-5">
           Our Crypto & Defi Academy Is A Huge Hit!
         </div>
         <div className="mt-8">

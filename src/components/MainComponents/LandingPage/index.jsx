@@ -36,8 +36,8 @@ const LandingPage = () => {
       <JoinNow onButtonClick={() => setOpenContactModal(true)} />
 
       <div className="bg-[#2B2B2B] flex flex-col items-center justify-center gap-5 py-10">
-        <img src={tIcon} height={50} width={80}></img>
-        <p className="md:max-w-[40%] max-w-[90%] text-white text-center">
+        <img src={tIcon} height={60} width={60}></img>
+        <p className="md:max-w-[40%] max-w-[90%] text-lg text-white text-center">
           And that’s why more and more institutions and major funds are getting
           into cryptocurrencies. As regulation improves and marketplace maturity
           grows, investor confidence in this revolutionary new era of finance is
@@ -54,7 +54,7 @@ const LandingPage = () => {
         className="relative h-[113px] w-full flex items-center justify-center"
       >
         <span
-          className="font-bold text-4xl text-center font-sans-serif font-['Montserrat']"
+          className="text-4xl text-center font-sans-serif font-['Montserrat'] font-[900]"
           style={{ fontFamily: "Montserrat" }}
         >
           THE FUTURE IS CRYPTO AND DEFI
@@ -68,8 +68,7 @@ const LandingPage = () => {
         className="relative h-[113px] w-full flex items-center justify-center"
       >
         <span
-          className=" text-2xl text-center font-sans-serif max-w-[60%] font-['Montserrat'] font-[900]"
-          style={{ fontFamily: "Montserrat" }}
+          className=" text-2xl text-center  max-w-[60%] font-['Montserrat'] font-[900]"
         >
           JOIN CAPITALS CLUB TODAY AND EMBARK ON A JOURNEY TOWARDS FINANCIAL
           FREEDOM AND PROSPERITY

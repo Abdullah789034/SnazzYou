@@ -11,7 +11,7 @@ const FAQ = () => {
         <div className="flex flex-col items-center py-8" id="faq">
             <div className="max-w-4xl w-full px-4">
                 <div className="mb-6 text-center">
-                    <h2 className="text-4xl font-bold" style={{ color: '#262F37' }}>FREQUENTLY ASKED QUESTIONS</h2>
+                    <h2 className="text-4xl font-extrabold font-['Montserrat']" style={{ color: '#262F37' }}>FREQUENTLY ASKED QUESTIONS</h2>
                 </div>
                 <div className="accordion">
                     {faqData.map((item, index) => (
@@ -34,7 +34,7 @@ const FAQ = () => {
                                         </svg>
                                     )}
                                 </span>
-                                <span className="text-lg font-semibold text-white">{item.question.toUpperCase()}</span>
+                                <span className="text-2xl font-semibold font-['Montserrat'] text-white">{item.question.toUpperCase()}</span>
                             </div>
                             <div className={`p-4 ${activeTab === index + 1 ? 'block' : 'hidden'}`} style={{ backgroundColor: 'white', transition: 'ease-in 0.3s' }}>
                                 <p>{item.answer}</p>
