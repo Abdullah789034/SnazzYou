@@ -5,7 +5,7 @@ import img from "../../../assets/images/8.png";
 const Defi = ({ onButtonClick }) => {
   return (
     <div
-      className="w-full h-[580px] flex items-center justify-center"
+      className="w-full h-auto md:h-[580px] p-8 flex items-center justify-center"
       style={{
         backgroundImage: `url(${bankbg})`,
         backgroundSize: "cover",
@@ -16,7 +16,7 @@ const Defi = ({ onButtonClick }) => {
         <img
           src={img}
           alt=""
-          className="w-[50%] sm:w-[20%] md:w-[50%] h-auto"
+          className=" md:w-[50%]  h-auto"
         />
         <div className="w-full max-w-[800px] text-white space-y-4 text-lg px-4 md:px-0">
           <p>
