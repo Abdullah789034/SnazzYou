@@ -17,9 +17,10 @@ const CryptoHit = () => {
         <div className="mt-8">
           <iframe
             src="https://drive.google.com/file/d/19loCBcEOPRxxZil0wpFvyFnLyHnWwDFr/preview"
-            width="580"
-            height="360"
+            // width="580"
+            // height="360"
             allow="autoplay"
+            className="w-full"
           ></iframe>
         </div>
       </div>

@@ -14,20 +14,15 @@ const Hero = () => {
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative text-center ">
-          <span className="text-[#fff04f] text-5xl mt-10  ">
+          <span className="text-[#fff04f] md:text-5xl text-lg mt-10  ">
             <b>Investing In Tomorrow, TODAY</b>
           </span>
         </div>
         <div className="relative flex items-start justify-center h-full mb-auto mt-3">
           <iframe
             allow="autoplay"
-            className="spotlightr"
-            allowtransparency="true"
-            style={{
-              width: "1px",
-              minWidth: "45%",
-              height: "80%",
-            }}
+            className="spotlightr min-w-[45%] h-[80%]"
+            allowtransparency="true "
             allowfullscreen="true"
             src="https://videos.cdn.spotlightr.com/watch/MTY2MDI4NA==?fallback=true"
             frameborder="0"
