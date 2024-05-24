@@ -32,9 +32,6 @@ export default {
 
           },
         },
-        letterSpacing: {
-          '2px': '2px',
-        },
       },
     },
   },
