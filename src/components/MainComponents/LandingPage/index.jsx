@@ -19,6 +19,8 @@ import Footer from "./Footer";
 import JoinNow from "./JoinNow";
 import Hero from "./Hero";
 import ContactFormModal from "../../CommonComponents/contactFormModal";
+import CryptoAcademyInfo from "./CryptoAcademyInfo";
+import WallStreet from "./WallStreet";
 
 const LandingPage = () => {
   const [openContactModal, setOpenContactModal] = useState(false);
@@ -81,6 +83,8 @@ const LandingPage = () => {
       <Team />
       <Analytics />
       <About onButtonClick={opeModal} />
+      <CryptoAcademyInfo />
+      <WallStreet onButtonClick={opeModal} />
       <FAQ />
       <ContactForm />
       <Footer />

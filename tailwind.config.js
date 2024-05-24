@@ -12,6 +12,7 @@ export default {
         fontFamily: {
           Montserrat: ["Montserrat", , "sans-serif"],
           Oswald: ["Oswald", , "sans-serif"],
+          Roboto: ['Roboto', 'sans-serif'],
         },
         colors: {
           primary: {
