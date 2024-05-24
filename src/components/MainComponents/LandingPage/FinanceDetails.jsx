@@ -44,7 +44,7 @@ const FinanceDetails = ({ onButtonClick }) => {
               alt="Join Now"
               srcSet={`${joinNow} 812w, ${joinNow} 300w, ${joinNow} 768w`}
               sizes="(max-width: 800px) 100vw, 800px"
-              className="w-2/3 h-auto mx-auto"
+              className="w-[90%]  md:w-2/3 h-auto mx-auto"
             />
           </a>
         </div>

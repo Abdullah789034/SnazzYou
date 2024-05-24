@@ -4,7 +4,7 @@ import bgImg from "../../../assets/images/bitcoin-image-in-mobile.jpg";
 const Details = () => {
   return (
     <div
-      className="w-full h-[620px] md:h-auto"
+      className="w-full h-auto"
       style={{
         backgroundImage: `url(${bgImg})`,
         backgroundSize: "cover",
@@ -13,7 +13,7 @@ const Details = () => {
     >
       <div className="flex flex-wrap py-8">
         <div className="w-full md:w-1/2 md:ml-16 mt-10">
-          <h2 className="w-full md:w-3/4 md:float-right md:mr-4 text-lg md:text-2xl p-4 md:p-0 text-white font-['Montserrat'] font-[900]">
+          <h2 className="w-full md:w-3/4 md:float-right md:mr-4 text-lg md:text-3xl p-4 md:p-0 text-white font-['Montserrat'] font-[700]">
             You won't believe what's brewing in the world of finance. Big names
             like{" "}
             <span className="text-[#fff04f]">Amazon, Apple, and PayPal</span>{" "}
@@ -22,7 +22,7 @@ const Details = () => {
             that.
           </h2>
 
-          <div className="text-white w-full md:w-3/4 md:float-right md:mr-8 text-base md:text-lg p-0 md:p-4 ">
+          <div className="text-white w-full md:w-3/4 md:float-right md:mr-8 text-base md:text-lg p-2 md:p-4 ">
             <br />
             <p>
               Now, here's the scoop: after the wild ride of 2021, market prices

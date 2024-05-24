@@ -12,13 +12,13 @@ const Blockchain = () => {
         style={{ backgroundImage: `url(${bgImg})` }}
       >
         <div className=" flex flex-col items-center w-full mt-10 p-4 md:p-8">
-          <div className="relative flex flex-wrap justify-center w-full gap-8 max-w-screen-lg">
+          <div className="relative flex flex-wrap justify-center w-full gap-16 md:gap-8 max-w-screen-lg">
             {/* No Middlemen */}
             <div className="relative flex flex-col items-center w-full max-w-xs p-4 space-y-4 text-center bg-gradient-to-b from-[#12100B] to-[#16171E] md:w-1/3 h-[320px]">
               <img
                 src={noMiddlemenImg}
                 alt="No Middlemen"
-                className="w-36 h-auto -mt-14"
+                className="w-[90%] md:w-36  h-auto -mt-14"
               />
               <h3 className="text-lg lg:text-2xl font-bold font-['Oswald'] text-white">
                 NO MIDDLEMAN
@@ -33,7 +33,7 @@ const Blockchain = () => {
               <img
                 src={noBankersImg}
                 alt="No Bankers"
-                className="w-24 h-auto -mt-14"
+                className="w-[50%] md:w-24 h-auto -mt-14"
               />
               <h3 className="text-lg lg:text-2xl font-bold font-['Oswald'] text-white">
                 NO BANKERS
@@ -49,7 +49,7 @@ const Blockchain = () => {
               <img
                 src={noBanksImg}
                 alt="No Banks"
-                className="w-32 h-auto -mt-14"
+                className="w-[50%] md:w-32 h-auto -mt-14"
               />
               <h3 className="text-lg lg:text-2xl font-bold font-['Oswald'] text-white">
                 NO BANKS

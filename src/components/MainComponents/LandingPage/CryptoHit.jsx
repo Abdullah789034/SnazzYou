@@ -4,10 +4,10 @@ import bgImg from "../../../assets/images/testimonials-background.jpg";
 const CryptoHit = () => {
   return (
     <div
-      className="w-full h-[620px] bg-cover bg-center"
+      className="w-full h-auto md:h-[620px] bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImg})` }}
     >
-      <div className="flex flex-col items-center justify-center h-full text-center text-white">
+      <div className="flex flex-col p-10 md:p-0 items-center justify-center h-full text-center text-white">
         <div className="text-5xl font-[1000] font-['Montserrat'] ">
           It’s Official.
         </div>
@@ -17,10 +17,10 @@ const CryptoHit = () => {
         <div className="mt-8">
           <iframe
             src="https://drive.google.com/file/d/19loCBcEOPRxxZil0wpFvyFnLyHnWwDFr/preview"
-            // width="580"
-            // height="360"
+            width="580"
+            height="360"
             allow="autoplay"
-            className="w-full"
+            className=""
           ></iframe>
         </div>
       </div>

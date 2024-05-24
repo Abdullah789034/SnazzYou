@@ -70,7 +70,7 @@ const LandingPage = () => {
         style={{ backgroundColor: "#fff04f" }}
         className="relative p-8 w-full flex items-center justify-center"
       >
-        <span className=" text-2xl text-center  max-w-[60%] font-['Montserrat'] font-[900]">
+        <span className=" text-2xl text-center max-w-[100%]  md:max-w-[60%] font-['Montserrat'] font-[900]">
           JOIN CAPITALS CLUB TODAY AND EMBARK ON A JOURNEY TOWARDS FINANCIAL
           FREEDOM AND PROSPERITY
         </span>

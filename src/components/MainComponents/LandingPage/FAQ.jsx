@@ -12,7 +12,7 @@ const FAQ = () => {
       <div className="max-w-4xl w-full px-4">
         <div className="mb-6 text-center">
           <h2
-            className="md:text-4xl text-xl font-extrabold font-['Montserrat']"
+            className="md:text-4xl text-lg font-extrabold font-['Montserrat']"
             style={{ color: "#262F37" }}
           >
             FREQUENTLY ASKED QUESTIONS
@@ -22,9 +22,8 @@ const FAQ = () => {
           {faqData.map((item, index) => (
             <div key={index} className="border-b border-gray-300">
               <div
-                className={`flex items-center p-4 gap-5 cursor-pointer transition ease-in duration-300 ${
-                  activeTab === index + 1 ? "bg-gray-200" : "bg-white"
-                }`}
+                className={`flex items-center p-4 gap-5 cursor-pointer transition ease-in duration-300 ${activeTab === index + 1 ? "bg-gray-200" : "bg-white"
+                  }`}
                 style={{
                   backgroundColor:
                     activeTab === index + 1 ? "#262F37" : "#262F37",
@@ -58,14 +57,13 @@ const FAQ = () => {
                     </svg>
                   )}
                 </span>
-                <span className="text-2xl font-semibold font-['Montserrat'] text-white">
+                <span className="text-lg md:text-xl lg:text-2xl font-semibold font-['Montserrat'] text-white">
                   {item.question.toUpperCase()}
                 </span>
               </div>
               <div
-                className={`p-4 ${
-                  activeTab === index + 1 ? "block" : "hidden"
-                }`}
+                className={`p-4 ${activeTab === index + 1 ? "block" : "hidden"
+                  }`}
                 style={{ backgroundColor: "white", transition: "ease-in 0.3s" }}
               >
                 <p>{item.answer}</p>

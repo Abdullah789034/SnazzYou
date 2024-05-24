@@ -45,7 +45,7 @@ const BookCall = ({ onButtonClick }) => {
             <img
               src={callImg}
               alt="Book a Call"
-              className="w-2/4 lg:w-1/4 h-auto cursor-pointer"
+              className="w-[90%] md:w-2/4 lg:w-1/4 h-auto cursor-pointer"
               onClick={onButtonClick}
             />
           </div>
