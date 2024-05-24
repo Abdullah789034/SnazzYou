@@ -13,6 +13,10 @@ export default {
           Montserrat: ["Montserrat", , "sans-serif"],
           Oswald: ["Oswald", , "sans-serif"],
           Roboto: ['Roboto', 'sans-serif'],
+          Lato: ['Lato', 'sans-serif'],
+          Libre: ['Libre Baskerville', 'times', 'serif'],
+
+
         },
         colors: {
           primary: {
