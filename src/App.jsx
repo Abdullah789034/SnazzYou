@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from "./components/MainComponents/LandingPage/Navbar";
+import Navbar from "./components/Navbar";
 import AppRoutes from "./routes";
 
 function App() {
