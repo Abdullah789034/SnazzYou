@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./Views/home";
 import Analyzing from "./components/LandingPage/Analyzing";
 import AIScreen from "./components/AI/AIScreen";
+import AISuggest from "./components/AI/AISuggest";
 
 const AppRoutes = () => {
   return (
@@ -11,6 +12,7 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/analyze" element={<Analyzing />} />
         <Route path="/ai" element={<AIScreen />} />
+        <Route path="/ai-suggest" element={<AISuggest />} />
       </Routes>
     </Router>
   );
