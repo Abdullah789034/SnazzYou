@@ -22,7 +22,7 @@ const Upload = () => {
     };
 
     return (
-        <div className='p-4 sm:p-10 md:p-20 flex flex-col items-center'>
+        <div className='p-4 h-screen md:h-auto  sm:p-10 md:p-20 flex flex-col items-center'>
             <h2 className='text-center text-xl sm:text-2xl md:text-3xl'>
                 Discover Your Perfect Style with AI-Powered Fashion <br /> Analysis from Your Image
             </h2>
