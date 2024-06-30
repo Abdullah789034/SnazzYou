@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import analyze from '../../assets/images/analyze.png';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -8,9 +8,7 @@ const Analyzing = () => {
     const location = useLocation();
     const { file } = location.state;
 
-
     useEffect(() => {
-
         const fetchData = async () => {
             try {
                 const formData = new FormData();
@@ -33,7 +31,7 @@ const Analyzing = () => {
     }, [file, navigate]);
 
     return (
-        <div className='flex flex-col items-center justify-center h-screen w-screen'>
+        <div className='flex flex-col items-center justify-center min-h-screen min-w-screen'>
             <img src={analyze} alt="Analyzing" className='animate-float transition-transform duration-500' />
             <p className='text-2xl mt-4 p-2 rounded-lg animate-float transition-transform duration-500'>
                 Snazz is Analyzing...

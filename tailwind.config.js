@@ -15,7 +15,8 @@ export default {
           Roboto: ['Roboto', 'sans-serif'],
           Lato: ['Lato', 'sans-serif'],
           Libre: ['Libre Baskerville', 'times', 'serif'],
-
+          Lib: ["Libre Bodoni", 'serif'],
+          League: ["League Spartan", 'sans-serif']
 
         },
         colors: {
