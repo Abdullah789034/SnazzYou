@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import scan from '../../assets/images/Scan.png';
 import arrow from '../../assets/images/Arrow.png';
 
@@ -61,6 +61,8 @@ const Upload = () => {
                     Images should be clear, unedited, and fresh to get the best judgment and suggestions from AI.
                 </p>
             </div>
+
+
         </div>
     );
 };

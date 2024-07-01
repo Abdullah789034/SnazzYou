@@ -1,4 +1,5 @@
 import React from 'react';
+// import obj from '../Object'
 import AIFeature from './AIFeature';
 import { useLocation } from 'react-router-dom';
 
