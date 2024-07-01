@@ -9,7 +9,7 @@ const Navbar = () => {
                 <Link to='/'>
                     <img src={logo} width={150} className='h-auto' alt="Logo" />
                 </Link>
-                <Link to='/login'><button className='bg-[white] px-4 py-2 rounded-full'>Login</button></Link>
+                {/* <Link to='/login'><button className='bg-[white] px-4 py-2 rounded-full'>Login</button></Link> */}
             </div>
         </div>
     );
