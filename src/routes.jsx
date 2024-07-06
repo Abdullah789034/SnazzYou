@@ -13,6 +13,8 @@ import GetEmail from "./components/Login/GetEmail.jsx";
 import GetDateRegion from "./components/Login/GetDateRegion.jsx";
 import GetGender from "./components/Login/GetGender.jsx";
 import GetPassword from "./components/Login/GetPassword.jsx";
+import Upload from "./components/LandingPage/Upload.jsx";
+import Images from "./components/Images.jsx";
 
 const AppRoutes = () => {
   return (
@@ -21,6 +23,8 @@ const AppRoutes = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/images" element={<Images />} />
           <Route path="/analyze" element={<Analyzing />} />
           <Route path="/ai" element={<AIScreen />} />
           <Route path="/ai-suggest" element={<AISuggest />} />
