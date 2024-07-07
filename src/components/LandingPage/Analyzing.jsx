@@ -6,13 +6,14 @@ import axios from 'axios';
 const Analyzing = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const { file } = location.state;
+    const { file1, file2 } = location.state;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const formData = new FormData();
-                formData.append('image', file);
+                formData.append('image', file1);
+                formData.append('image2', file2);
 
                 const response = await axios.post('https://snazzyou.ignorelist.com/api/v1/toy/suggest', formData, {
                     headers: {
@@ -28,7 +29,7 @@ const Analyzing = () => {
         };
 
         fetchData();
-    }, [file, navigate]);
+    }, [file1, navigate]);
 
     return (
         <div className='flex flex-col items-center justify-center min-h-screen min-w-screen'>
