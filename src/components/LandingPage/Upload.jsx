@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import scan from '../../assets/images/Scan.png';
 import arrow from '../../assets/images/Arrow.png';
 
@@ -22,7 +22,7 @@ const Upload = () => {
     };
 
     return (
-        <div className='p-4 sm:p-10 md:p-20 flex flex-col items-center'>
+        <div className='p-4 h-screen md:h-auto  sm:p-10 md:p-20 flex flex-col items-center'>
             <h2 className='text-center text-xl sm:text-2xl md:text-3xl'>
                 Discover Your Perfect Style with AI-Powered Fashion <br /> Analysis from Your Image
             </h2>
@@ -61,6 +61,8 @@ const Upload = () => {
                     Images should be clear, unedited, and fresh to get the best judgment and suggestions from AI.
                 </p>
             </div>
+
+
         </div>
     );
 };
