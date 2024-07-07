@@ -7,8 +7,11 @@ export const UserProvider = ({ children }) => {
     const [userData, setUserData] = useState({
         name: '',
         email: '',
-        birthDate: '',
-        region: '',
+        dateOfBirth: '',
+        region: {
+            city: '',
+            country: ''
+        },
         gender: '',
         password: ''
     });
