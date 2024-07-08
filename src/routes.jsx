@@ -17,6 +17,7 @@ import Upload from "./components/LandingPage/Upload.jsx";
 import Images from "./components/Images.jsx";
 import ProtectedRoutes from "./components/ProtectedRoutes.jsx";
 import Loginn from "./components/Login/Loginn.jsx";
+import Dashboard from "./components/Dashboard.jsx";
 
 const AppRoutes = () => {
   return (
@@ -35,6 +36,7 @@ const AppRoutes = () => {
           </Route>
 
           <Route path="/login" element={<Loginn />} />
+          <Route path="/dashboard" element={<Dashboard />} />
 
           <Route path="/register" element={<GetName />} />
           <Route path="/register/email" element={<GetEmail />} />
