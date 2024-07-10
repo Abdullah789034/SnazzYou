@@ -19,7 +19,8 @@ const validationSchema = yup.object({
 });
 
 const GetPassword = () => {
-  const { userData, setUserData } = useContext(UserContext);
+  const { userData, setUserData, loggedIn, setLoggedIn } =
+    useContext(UserContext);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false); // State to track loading status
 
@@ -42,7 +43,8 @@ const GetPassword = () => {
           return console.error(response.data.error);
         }
         localStorage.setItem("jwt-token", response.data.token);
-        navigate("/");
+        setLoggedIn(true);
+        navigate("/upload");
       } catch (error) {
         console.error("Error submitting data:", error);
         // Handle the error accordingly

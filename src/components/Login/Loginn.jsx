@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import arrow from "../../assets/images/arrow-right-white.png";
 import axiosInstance from "../../api/axios.provider";
+import { UserContext } from "../../Context/UserContext";
 
 // Define validation schema
 const validationSchema = yup.object({
@@ -16,10 +17,10 @@ const validationSchema = yup.object({
 
 const Login = () => {
   const navigate = useNavigate();
+  const { loggedIn, setLoggedIn } = useContext(UserContext);
 
   useEffect(() => {
-    const token = localStorage.getItem("jwt-token") || null;
-    if (token) {
+    if (loggedIn) {
       navigate("/dashboard");
     }
   }, []);
@@ -42,7 +43,8 @@ const Login = () => {
         }
         const token = response.data.token;
         localStorage.setItem("jwt-token", token);
-        navigate("/");
+        setLoggedIn(true);
+        navigate("/dashboard");
       } catch (error) {
         console.error("Error logging in:", error);
       }

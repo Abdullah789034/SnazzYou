@@ -33,10 +33,10 @@ const AppRoutes = () => {
             <Route path="/analyze" element={<Analyzing />} />
             <Route path="/ai" element={<AIScreen />} />
             <Route path="/ai-suggest" element={<AISuggest />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Route>
 
           <Route path="/login" element={<Loginn />} />
-          <Route path="/dashboard" element={<Dashboard />} />
 
           <Route path="/register" element={<GetName />} />
           <Route path="/register/email" element={<GetEmail />} />
