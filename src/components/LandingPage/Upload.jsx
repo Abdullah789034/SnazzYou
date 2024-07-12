@@ -27,7 +27,7 @@ const Upload = () => {
       const newFileArray = uploadedFiles;
       newFileArray[0] = file;
       setUploadedFiles(newFileArray);
-      setAlertMessage("Image 1 uploaded successfully!");
+      setAlertMessage("Face Image uploaded successfully!");
       setTimeout(() => setAlertMessage(""), 3000);
     }
   };
@@ -39,7 +39,7 @@ const Upload = () => {
       const newFileArray = uploadedFiles;
       newFileArray[1] = file;
       setUploadedFiles(newFileArray);
-      setAlertMessage("Image 2 uploaded successfully!");
+      setAlertMessage("Body Image uploaded successfully!");
       setTimeout(() => setAlertMessage(""), 3000);
     }
   };
