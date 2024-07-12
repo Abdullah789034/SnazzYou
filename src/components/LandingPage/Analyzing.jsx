@@ -1,17 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import analyze from "../../assets/images/analyze.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import axiosInstance from "../../api/axios.provider";
+import { useScroll } from "framer-motion";
 
 const Analyzing = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  if (!location?.state) {
-    navigate("/dashboard");
-  }
-  const { files } = location.state;
+  const [files, setFiles] = useState(location?.state?.files);
+
   useEffect(() => {
+    if (!files) {
+      navigate("/dashboard");
+    }
     const fetchData = async () => {
       try {
         const formData = new FormData();
@@ -35,7 +37,7 @@ const Analyzing = () => {
     };
 
     fetchData();
-  }, [files, navigate]);
+  }, [navigate]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen min-w-screen">
