@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import analyze from "../../assets/images/analyze.png";
 import { useLocation, useNavigate } from "react-router-dom";
-import axios from "axios";
 import axiosInstance from "../../api/axios.provider";
-import { useScroll } from "framer-motion";
 
 const Analyzing = () => {
   const navigate = useNavigate();
@@ -30,7 +28,9 @@ const Analyzing = () => {
         );
 
         console.log("API Response:", response.data);
-        // navigate('/ai', { state: { suggestion: response.data } });
+        navigate("/analysis", {
+          state: { analysis: response.data?.data?.analysis },
+        });
       } catch (error) {
         console.error("Error fetching data:", error);
       }

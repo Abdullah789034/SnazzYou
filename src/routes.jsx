@@ -18,6 +18,8 @@ import Images from "./components/Images.jsx";
 import ProtectedRoutes from "./components/ProtectedRoutes.jsx";
 import Loginn from "./components/Login/Loginn.jsx";
 import Dashboard from "./components/Dashboard.jsx";
+import Analysis from "./components/AI/Analysis.jsx";
+import Suggestions from "./components/AI/Suggestions.jsx";
 
 const AppRoutes = () => {
   return (
@@ -31,9 +33,11 @@ const AppRoutes = () => {
             <Route path="/upload" element={<Upload />} />
             <Route path="/images" element={<Images />} />
             <Route path="/analyze" element={<Analyzing />} />
+            <Route path="/analysis" element={<Analysis />} />
             <Route path="/ai" element={<AIScreen />} />
             <Route path="/ai-suggest" element={<AISuggest />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/suggestions" element={<Suggestions />} />
           </Route>
 
           <Route path="/login" element={<Loginn />} />

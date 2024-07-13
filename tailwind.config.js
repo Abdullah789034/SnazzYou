@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const { nextui } = require("@nextui-org/react");
+import daisyui from "daisyui";
 export default {
   content: [
     "./index.html",
@@ -12,12 +13,11 @@ export default {
         fontFamily: {
           Montserrat: ["Montserrat", , "sans-serif"],
           Oswald: ["Oswald", , "sans-serif"],
-          Roboto: ['Roboto', 'sans-serif'],
-          Lato: ['Lato', 'sans-serif'],
-          Libre: ['Libre Baskerville', 'times', 'serif'],
-          Lib: ["Libre Bodoni", 'serif'],
-          League: ["League Spartan", 'sans-serif']
-
+          Roboto: ["Roboto", "sans-serif"],
+          Lato: ["Lato", "sans-serif"],
+          Libre: ["Libre Baskerville", "times", "serif"],
+          Lib: ["Libre Bodoni", "serif"],
+          League: ["League Spartan", "sans-serif"],
         },
         colors: {
           primary: {
@@ -30,12 +30,11 @@ export default {
             blue: {
               50: "#15212B",
             },
-
           },
         },
       },
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [nextui(), daisyui],
 };

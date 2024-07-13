@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import human from '../../assets/images/human.png';
 // import obj from '../Object';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
@@ -12,10 +12,14 @@ import lineBody from '../../assets/images/LineBody.png';
 const AIScreen = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const [analysis, setAnalysis]  = useState(location?.state?.analysis)
+    const obj = analysis
+    useEffect(()=>{
+        if(!analysis){
+            navigate("/dashboard")
+        }
 
-    const { suggestion } = location.state
-    const obj = suggestion
-
+}, [])
     const handleSuggestionClick = () => {
         navigate('/ai-suggest', { state: { obj } })
     }
