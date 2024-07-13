@@ -52,29 +52,30 @@ const Login = () => {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen min-w-screen">
+    <div className="flex flex-col items-center justify-center min-h-[80vh] min-w-screen">
       <form
         onSubmit={formik.handleSubmit}
-        className="flex flex-col items-center w-full max-w-lg"
+        className="flex flex-col gap-3 items-center md:w-[80vw] xl:w-[50vw] w-[90vw]"
       >
         <p className="text-2xl md:text-4xl mt-4 p-2 text-center">Login</p>
 
-        <div className="flex flex-col md:flex-row gap-12 items-center justify-center w-full">
+        <div className="flex flex-col md:flex-row  items-center justify-center w-full">
           <label
             htmlFor="email"
             className="text-2xl md:text-4xl mt-4 p-2 w-full md:w-1/4"
           >
             Email
           </label>
-          <div className="flex items-center mt-4 w-full md:w-3/4 border-b-2 border-white">
+          <div className="flex items-center mt-1 w-full md:w-3/4 border-b-2 border-white">
             <input
               type="email"
               id="email"
               name="email"
+              placeholder="Your Email"
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className="p-2 text-xl md:text-2xl text-center w-full bg-transparent text-white focus:outline-none"
+              className="p-2 text-md md:text-xl text-center w-full bg-transparent text-white focus:outline-none"
             />
           </div>
         </div>
@@ -82,22 +83,23 @@ const Login = () => {
           <p className="text-red-500 mt-2 text-center">{formik.errors.email}</p>
         ) : null}
 
-        <div className="flex flex-col md:flex-row gap-12 items-center justify-center w-full mt-4">
+        <div className="flex flex-col md:flex-row gap-1 items-center justify-center w-full mt-4">
           <label
             htmlFor="password"
             className="text-2xl md:text-4xl mt-4 p-2 w-full md:w-1/4"
           >
             Password
           </label>
-          <div className="flex items-center mt-4 w-full md:w-3/4 border-b-2 border-white">
+          <div className="flex items-center mt-1 w-full md:w-3/4 border-b-2 border-white">
             <input
               type="password"
               id="password"
               name="password"
+              placeholder="Your Password"
               value={formik.values.password}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className="p-2 text-xl md:text-2xl text-center w-full bg-transparent text-white focus:outline-none"
+              className="p-2 text-md md:text-xl text-center w-full bg-transparent text-white focus:outline-none"
             />
           </div>
         </div>
