@@ -1,43 +1,56 @@
-import React, { useEffect } from 'react';
-import analyze from '../../assets/images/analyze.png';
-import { useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import analyze from "../../assets/images/analyze.png";
+import { useLocation, useNavigate } from "react-router-dom";
+import axiosInstance from "../../api/axios.provider";
 
 const Analyzing = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
-    const { file } = location.state;
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [files, setFiles] = useState(location?.state?.files);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const formData = new FormData();
-                formData.append('image', file);
+  useEffect(() => {
+    if (!files) {
+      navigate("/dashboard");
+    }
+    const fetchData = async () => {
+      try {
+        const formData = new FormData();
+        formData.append("image", files);
 
-                const response = await axios.post('https://snazzyou.ignorelist.com/api/v1/toy/suggest', formData, {
-                    headers: {
-                        'Content-Type': 'multipart/form-data'
-                    }
-                });
+        const response = await axiosInstance.post(
+          "/v1/users/uploads/images",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
 
-                console.log('API Response:', response.data);
-                navigate('/ai', { state: { suggestion: response.data } });
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
+        console.log("API Response:", response.data);
+        navigate("/analysis", {
+          state: { analysis: response.data?.data?.analysis },
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-        fetchData();
-    }, [file, navigate]);
+    fetchData();
+  }, [navigate]);
 
-    return (
-        <div className='flex flex-col items-center justify-center min-h-screen min-w-screen'>
-            <img src={analyze} alt="Analyzing" className='animate-float transition-transform duration-500' />
-            <p className='text-2xl mt-4 p-2 rounded-lg animate-float transition-transform duration-500'>
-                Snazz is Analyzing...
-            </p>
-        </div>
-    );
-}
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen min-w-screen">
+      <img
+        src={analyze}
+        alt="Analyzing"
+        className="animate-float transition-transform duration-500"
+      />
+      <p className="text-2xl mt-4 p-2 rounded-lg animate-float transition-transform duration-500">
+        Snazz is Analyzing...
+      </p>
+    </div>
+  );
+};
 
 export default Analyzing;
