@@ -32,8 +32,12 @@ const GetEmail = () => {
       console.log(response.data);
       if (!response.data.success) {
         formik.errors.email = response.data.error.message;
+
+        setTimeout(() => {
+          formik.errors.email = "";
+        }, 5000);
         setLoading(false);
- 
+
         return;
       }
       setUserData({ ...userData, email: values.email });
@@ -46,16 +50,17 @@ const GetEmail = () => {
       <p className="text-4xl mt-4 p-2">Write your email?</p>
       <form
         onSubmit={formik.handleSubmit}
-        className="flex flex-col items-center w-1/2"
+        className="flex flex-col items-center w-[80vw]"
       >
         <div className="flex items-center mt-4 w-full border-b-2 border-white">
           <input
             type="text"
             name="email"
+            placeholder="hassan@snazzyou.com"
             value={formik.values.email}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="p-2 text-2xl text-center w-full bg-transparent text-white focus:outline-none"
+            className="p-2 text-md md:text-xl text-center w-full bg-transparent text-white focus:outline-none"
           />
           {!isLoading ? (
             <button type="submit" className="ml-2 p-2">

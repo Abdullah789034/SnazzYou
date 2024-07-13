@@ -40,7 +40,7 @@ const Analyzing = () => {
   }, [navigate]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen min-w-screen">
+    <div className="flex flex-col items-center justify-center min-h-[80vh] min-w-screen">
       <img
         src={analyze}
         alt="Analyzing"

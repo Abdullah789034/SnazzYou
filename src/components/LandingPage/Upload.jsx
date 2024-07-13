@@ -64,8 +64,8 @@ const Upload = () => {
   };
 
   return (
-    <div className="p-4 h-auto sm:p-10 md:p-20 flex flex-col items-center">
-      <div className="mt-4 sm:mt-6 md:mt-8 text-center flex flex-col items-center">
+    <div className="p-4 h-auto sm:p-5 md:p-5 flex flex-col items-center">
+      <div className="mt-4 sm:mt-4 md:mt-4 text-center flex flex-col items-center">
         <p className="text-lg sm:text-xl md:text-3xl">
           Upload your images so Snazz can analyze them & <br /> suggest the best
           for you
@@ -74,67 +74,73 @@ const Upload = () => {
           Your images are deleted right after AI analysis
         </p>
       </div>
-
-      <div className="flex flex-col sm:flex-row items-center w-full sm:w-3/4 md:w-1/2 gap-4 mt-6 md:mt-8">
-        <div className="flex justify-center">
-          <img
-            src={scanhead}
-            alt="Scan"
-            className="w-40 h-40 sm:w-40 sm:h-40"
-          />
-        </div>
-        <div className="flex flex-col items-center w-full">
-          <p className="text-center text-sm sm:text-base">
-            1 image of your face, to determine your face structure and features
-          </p>
-          <input
-            type="file"
-            ref={fileInputRef1}
-            style={{ display: "none" }}
-            onChange={handleFileChange1}
-          />
-          <button
-            className="bg-white px-6 text-black sm:px-8 py-3 sm:py-4 mt-4 font-bold flex items-center justify-center gap-2 w-full border border-gray-300 rounded shadow-sm hover:bg-gray-100"
-            onClick={handleUpload1}
-          >
-            Upload{" "}
+      <div className="flex flex-col justify-center border-dashed border-2 border-white rounded-lg p-5 my-5">
+        <div className="flex flex-col sm:flex-row items-center w-full  gap-4 mt-6 ">
+          <div className="flex justify-center">
             <img
-              src={arrow}
-              alt="Arrow"
-              width={20}
-              className="inline-block ml-2"
+              src={scanhead}
+              alt="Scan"
+              className="w-40 h-auto sm:w-40 sm:h-auto"
             />
-          </button>
+          </div>
+          <div className="flex flex-col items-center w-full">
+            <p className="text-center text-sm sm:text-base">
+              1 image of your face, to determine your face structure and
+              features
+            </p>
+            <input
+              type="file"
+              ref={fileInputRef1}
+              style={{ display: "none" }}
+              onChange={handleFileChange1}
+            />
+            <button
+              className="bg-white px-6 text-black sm:px-8 py-3 sm:py-4 mt-4 font-bold flex items-center justify-center gap-2 w-full border border-gray-300 rounded shadow-sm hover:bg-gray-100"
+              onClick={handleUpload1}
+            >
+              Upload{" "}
+              <img
+                src={arrow}
+                alt="Arrow"
+                width={20}
+                className="inline-block ml-2"
+              />
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div className="flex flex-col sm:flex-row items-center w-full sm:w-3/4 md:w-1/2 gap-4 mt-6 md:mt-8">
-        <div className="flex justify-center">
-          <img src={scan} alt="Scan" className="w-40 h-40 sm:w-40 sm:h-40" />
-        </div>
-        <div className="flex flex-col items-center w-full">
-          <p className="text-center text-sm sm:text-base">
-            1 image of your whole body, to determine your body structure and
-            features
-          </p>
-          <input
-            type="file"
-            ref={fileInputRef2}
-            style={{ display: "none" }}
-            onChange={handleFileChange2}
-          />
-          <button
-            className="bg-white px-6 text-black sm:px-8 py-3 sm:py-4 mt-4 font-bold flex items-center justify-center gap-2 w-full border border-gray-300 rounded shadow-sm hover:bg-gray-100"
-            onClick={handleUpload2}
-          >
-            Upload{" "}
+        <div className="flex flex-col sm:flex-row items-center w-full gap-4 mt-6">
+          <div className="flex justify-center">
             <img
-              src={arrow}
-              alt="Arrow"
-              width={20}
-              className="inline-block ml-2"
+              src={scan}
+              alt="Scan"
+              className="w-40 h-auto sm:w-40 sm:h-auto"
             />
-          </button>
+          </div>
+          <div className="flex flex-col items-center w-full">
+            <p className="text-center text-sm sm:text-base">
+              1 image of your whole body, to determine your body structure and
+              features
+            </p>
+            <input
+              type="file"
+              ref={fileInputRef2}
+              style={{ display: "none" }}
+              onChange={handleFileChange2}
+            />
+            <button
+              className="bg-white px-6 text-black sm:px-8 py-3 sm:py-4 mt-4 font-bold flex items-center justify-center gap-2 w-full border border-gray-300 rounded shadow-sm hover:bg-gray-100"
+              onClick={handleUpload2}
+            >
+              Upload{" "}
+              <img
+                src={arrow}
+                alt="Arrow"
+                width={20}
+                className="inline-block ml-2"
+              />
+            </button>
+          </div>
         </div>
       </div>
 
@@ -144,14 +150,14 @@ const Upload = () => {
         </div>
       )}
 
-      <p className="text-xl bg-[#0A5891] p-3 mt-10">
+      <p className="text-sm bg-[#0A5891] p-1 mt-5">
         After uploading both images, click on Proceed.
       </p>
       <button
-        className="bg-gray-500 text-white px-6 py-3 mt-6 rounded shadow-sm hover:bg-[#0A5891]"
+        className="bg-transparent text-white border-white border-2 px-6 py-3 mt-6 rounded shadow-sm hover:bg-white hover:text-black duration-150 font-semibold"
         onClick={handleSubmit}
       >
-        Proceed
+        Proceed ➔
       </button>
 
       <div className="text-center mt-6 md:mt-8">

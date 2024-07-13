@@ -63,16 +63,17 @@ const GetPassword = () => {
           Create a Password
         </p>
 
-        <div className="flex gap-4 items-center justify-center w-full">
+        <div className="flex md:flex-row flex-col md:gap-1  items-center justify-center w-full">
           <p className="text-2xl md:text-4xl mt-4 p-2 w-full">Password</p>
-          <div className="flex items-center mt-4 w-full border-b-2 border-white">
+          <div className="flex  items-center mt-4 w-full border-b-2 border-white">
             <input
               type={formik.values.showPassword ? "text" : "password"}
               name="password"
+              placeholder="password"
               value={formik.values.password}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className="p-2 text-xl md:text-2xl text-center w-full bg-transparent text-white focus:outline-none"
+              className="p-2 text-md md:text-xl text-center w-full bg-transparent text-white focus:outline-none"
             />
             <button
               type="button"
@@ -92,7 +93,7 @@ const GetPassword = () => {
           <p className="text-red-500 mt-2">{formik.errors.password}</p>
         ) : null}
 
-        <div className="flex gap-4 items-center justify-center w-full mt-4">
+        <div className="flex md:flex-row flex-col md:gap-1  items-center justify-center w-full mt-4">
           <p className="text-2xl md:text-4xl mt-4 p-2 w-full">
             Confirm Password
           </p>
@@ -100,10 +101,11 @@ const GetPassword = () => {
             <input
               type={formik.values.showPassword ? "text" : "password"}
               name="confirmPassword"
+              placeholder="confirm password"
               value={formik.values.confirmPassword}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className="p-2 text-xl md:text-2xl text-center w-full bg-transparent text-white focus:outline-none"
+              className="p-2 text-md md:text-xl text-center w-full bg-transparent text-white focus:outline-none"
             />
           </div>
         </div>

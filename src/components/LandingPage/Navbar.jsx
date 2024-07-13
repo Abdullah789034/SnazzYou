@@ -14,7 +14,7 @@ const Navbar = () => {
     }
   }, []);
   return (
-    <div className="h-auto  bg-stone-950">
+    <div className="h-auto  bg-black">
       <div className="p-6 flex justify-between">
         <Link to="/">
           <img src={logo} width={175} className="h-auto" alt="Logo" />
