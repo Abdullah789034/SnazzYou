@@ -35,10 +35,10 @@ const GetDateRegion = () => {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen min-w-screen px-4">
+    <div className="flex flex-col items-center justify-center min-h-[80vh] min-w-screen px-4">
       <form
         onSubmit={formik.handleSubmit}
-        className="flex flex-col items-center w-full max-w-lg"
+        className="flex flex-col items-center max-w-[80vw]"
       >
         <div className="flex flex-col md:flex-row gap-4 items-center justify-center w-full">
           <p className="text-2xl md:text-4xl mt-4 p-2 text-center">
@@ -51,7 +51,7 @@ const GetDateRegion = () => {
               value={formik.values.birthDate}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className="p-2 text-xl md:text-2xl text-center w-full bg-transparent text-white focus:outline-none"
+              className="p-2 text-md md:text-xl text-center w-full bg-transparent text-white focus:outline-none"
             />
           </div>
         </div>
@@ -71,7 +71,7 @@ const GetDateRegion = () => {
                 value={formik.values.country}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className="p-2 text-xl md:text-2xl text-center w-full bg-transparent text-white focus:outline-none"
+                className="p-2 text-md md:text-xl text-center w-full bg-transparent text-white focus:outline-none"
               />
             </div>
             {formik.touched.country && formik.errors.country ? (
@@ -85,7 +85,7 @@ const GetDateRegion = () => {
                 value={formik.values.city}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className="p-2 text-xl md:text-2xl text-center w-full bg-transparent text-white focus:outline-none"
+                className="p-2 text-md md:text-xl text-center w-full bg-transparent text-white focus:outline-none"
               />
             </div>
             {formik.touched.city && formik.errors.city ? (

@@ -37,16 +37,17 @@ const GetName = () => {
       <p className="text-4xl mt-4 p-2">What is your name?</p>
       <form
         onSubmit={formik.handleSubmit}
-        className="flex flex-col items-center w-1/2"
+        className="flex flex-col items-center w-[80vw]"
       >
         <div className="flex items-center mt-4 w-full border-b-2 border-white">
           <input
             type="text"
             name="name"
+            placeholder="John Doe"
             value={formik.values.name}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="p-2 text-2xl text-center w-full bg-transparent text-white focus:outline-none"
+            className="p-2 text-md md:text-xl text-center w-full bg-transparent text-white focus:outline-none"
           />
           <button
             type="submit"
