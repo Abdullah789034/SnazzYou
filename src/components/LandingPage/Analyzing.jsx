@@ -15,7 +15,7 @@ const Analyzing = () => {
     const fetchData = async () => {
       try {
         const formData = new FormData();
-        formData.append("image", files);
+        files.forEach((file) => formData.append("image", file));
 
         const response = await axiosInstance.post(
           "/v1/users/uploads/images",
