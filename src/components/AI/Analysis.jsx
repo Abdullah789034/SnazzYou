@@ -12,6 +12,7 @@ const Analysis = () => {
   useEffect(() => {
     if (!analysis) {
       navigate("/dashboard");
+      alert('Analysis not done due to some error');
     }
   }, []);
 

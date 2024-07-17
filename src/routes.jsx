@@ -14,12 +14,13 @@ import GetDateRegion from "./components/Login/GetDateRegion.jsx";
 import GetGender from "./components/Login/GetGender.jsx";
 import GetPassword from "./components/Login/GetPassword.jsx";
 import Upload from "./components/LandingPage/Upload.jsx";
-import Images from "./components/Images.jsx";
+import Images from "./components/AI/Images.jsx";
 import ProtectedRoutes from "./components/ProtectedRoutes.jsx";
 import Loginn from "./components/Login/Loginn.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import Analysis from "./components/AI/Analysis.jsx";
 import Suggestions from "./components/AI/Suggestions.jsx";
+import Feedback from "./components/Feedback.jsx";
 
 const AppRoutes = () => {
   return (
@@ -41,6 +42,7 @@ const AppRoutes = () => {
           </Route>
 
           <Route path="/login" element={<Loginn />} />
+          <Route path="/feedback" element={<Feedback />} />
 
           <Route path="/register" element={<GetName />} />
           <Route path="/register/email" element={<GetEmail />} />
