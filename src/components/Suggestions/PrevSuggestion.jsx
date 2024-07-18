@@ -44,9 +44,8 @@ const PrevSuggestion = () => {
 
     const isLoopEnabled = suggestions.length > 3;
 
-    const handleSuggestionClick = (data) => {
-        const suggestion = data.suggestion
-        navigate('/suggestions', { state: { suggestion } });
+    const handleSuggestionClick = (id) => {
+        navigate(`/prev-suggestion/${id}`);
     };
 
     return (
@@ -89,7 +88,7 @@ const PrevSuggestion = () => {
                     className="mySwiper"
                 >
                     {suggestions.map((suggestion, index) => (
-                        <SwiperSlide key={index} onClick={() => handleSuggestionClick(suggestion)}>
+                        <SwiperSlide key={index} onClick={() => handleSuggestionClick(suggestion._id)}>
                             <Suggested
                                 title={suggestion.suggestion.overAllStyle.name}
                                 date={new Date(suggestion.createdAt).toLocaleDateString()}

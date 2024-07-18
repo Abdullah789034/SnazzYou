@@ -21,6 +21,7 @@ import Dashboard from "./components/Dashboard.jsx";
 import Analysis from "./components/AI/Analysis.jsx";
 import Suggestions from "./components/AI/Suggestions.jsx";
 import Feedback from "./components/Feedback.jsx";
+import SuggestedBody from "./components/Suggestions/SuggestedBody.jsx";
 
 const AppRoutes = () => {
   return (
@@ -39,6 +40,7 @@ const AppRoutes = () => {
             <Route path="/ai-suggest" element={<AISuggest />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/suggestions" element={<Suggestions />} />
+            <Route path="/prev-suggestion/:id" element={<SuggestedBody />} />
           </Route>
 
           <Route path="/login" element={<Loginn />} />
