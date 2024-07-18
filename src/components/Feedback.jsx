@@ -1,21 +1,36 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axiosInstance from '../api/axios.provider'; // Import axiosInstance
 
 const Feedback = () => {
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState('');
     const navigate = useNavigate();
 
-
     const handleRating = (rate) => {
         setRating(rate);
     };
 
-    const handleSubmit = () => {
-        // Handle form submission logic
-        console.log('Rating:', rating);
-        console.log('Comment:', comment);
-        navigate('/dashboard')
+    const handleSubmit = async () => {
+        // Prepare the data to be sent
+        const feedbackData = {
+            rating,
+            comment,
+        };
+
+        try {
+            // Send POST request
+            const response = await axiosInstance.post('/v1/users/feedback', feedbackData);
+            if (response.data.success) {
+                console.log('Feedback submitted successfully');
+                // Navigate to the dashboard
+                navigate('/dashboard');
+            } else {
+                console.error('Failed to submit feedback');
+            }
+        } catch (error) {
+            console.error('Error submitting feedback:', error);
+        }
     };
 
     return (

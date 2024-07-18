@@ -1,57 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay } from 'swiper/modules';
 import Suggested from './Suggested';
+import axiosInstance from "../../api/axios.provider";
 
 const PrevSuggestion = () => {
-    const previousSuggestions = [
-        {
-            title: 'Stylish Summer Outfit',
-            date: '2024-07-01',
-            description: 'A cool and comfortable summer outfit perfect for sunny days.',
-        },
-        {
-            title: 'Winter Wardrobe Essentials',
-            date: '2024-01-15',
-            description: 'Essential items for staying warm and stylish during the winter months.',
-        },
-        {
-            title: 'Spring Fashion Tips',
-            date: '2024-03-20',
-            description: 'Fresh fashion ideas for a vibrant and stylish spring season.',
-        },
-        {
-            title: 'Autumn Attire',
-            date: '2024-09-10',
-            description: 'Perfect outfits to embrace the autumn vibes.',
-        },
-        {
-            title: 'Casual Wear',
-            date: '2024-06-05',
-            description: 'Everyday casual wear that combines comfort and style.',
-        },
-        {
-            title: 'Formal Look',
-            date: '2024-05-25',
-            description: 'Formal attire for business and special events.',
-        },
-        // Add more suggestions as needed
-    ];
+    const [suggestions, setSuggestions] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchSuggestions = async () => {
+            try {
+                const response = await axiosInstance.get("/v1/suggestions");
+                if (response.data.success) {
+                    setSuggestions(response.data.suggestions);
+                } else {
+                    throw new Error("Failed to fetch suggestions");
+                }
+            } catch (error) {
+                console.error("Error fetching suggestions:", error);
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchSuggestions();
+    }, []);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>Error: {error}</p>;
+    }
+
+    const isLoopEnabled = suggestions.length > 3;
+
+    const handleSuggestionClick = (data) => {
+        const suggestion = data.suggestion
+        navigate('/suggestions', { state: { suggestion } });
+    };
 
     return (
         <>
             <div>
-                <p className='text-2xl'>Previous Suggestion</p>
+                <p className='text-3xl p-4 font-semibold'>Previous Suggestions</p>
             </div>
             <div className='mt-5'>
-
                 <Swiper
                     spaceBetween={2}
                     slidesPerView={1}
-                    loop={true}
+                    loop={isLoopEnabled}
                     centeredSlides={true}
                     autoplay={{
                         delay: 3000,
@@ -81,18 +88,17 @@ const PrevSuggestion = () => {
                     modules={[Autoplay]}
                     className="mySwiper"
                 >
-                    {previousSuggestions.map((suggestion, index) => (
-                        <SwiperSlide key={index}>
+                    {suggestions.map((suggestion, index) => (
+                        <SwiperSlide key={index} onClick={() => handleSuggestionClick(suggestion)}>
                             <Suggested
-                                title={suggestion.title}
-                                date={suggestion.date}
-                                description={suggestion.description}
+                                title={suggestion.suggestion.overAllStyle.name}
+                                date={new Date(suggestion.createdAt).toLocaleDateString()}
+                                description={suggestion.suggestion.overAllStyle.description.join(' ')}
                             />
                         </SwiperSlide>
                     ))}
                 </Swiper>
             </div>
-
         </>
     );
 };
