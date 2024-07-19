@@ -5,6 +5,7 @@ import dashimg from "../assets/images/dash-img.png";
 import addImg from "../assets/images/AddImg.png";
 import { Link } from "react-router-dom";
 import axiosInstance from "../api/axios.provider"; // Import axiosInstance
+import PrevSuggestion from "./Suggestions/PrevSuggestion";
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
@@ -54,7 +55,7 @@ const Dashboard = () => {
   return (
     <div className="p-4">
       <div className="relative flex flex-col md:flex-row rounded-sm w-full p-8 border-white border-2">
-        <div className="absolute top-0 right-0 mt-2 mr-2 text-xl">
+        <div className="absolute top-0 right-0 mt-2 mr-2 text-xl ">
           <p>Since {new Date(user.dateOfBirth).getFullYear()}</p>
           <p>
             {new Date().getFullYear() -
@@ -66,7 +67,7 @@ const Dashboard = () => {
           <div className="flex-shrink-0 p-4 mr-4 md:mr-0 md:p-2">
             <img src={img} alt={user.name} className="w-16 h-16 rounded-full" />
           </div>
-          <div className="mt-4 md:mt-0 md:ml-8 flex-grow">
+          <div className="mt-8 md:mt-0 md:ml-8 w-1/2 lg:w-full flex-grow">
             <p className="text-3xl">{user.name.toUpperCase()}</p>
             <div className="flex flex-col md:flex-row gap-8 mt-4">
               <div className="text-xl flex items-center">
@@ -112,6 +113,9 @@ const Dashboard = () => {
             className="max-w-full h-auto"
           />
         </div>
+      </div>
+      <div className="mt-10">
+        <PrevSuggestion />
       </div>
     </div>
   );
