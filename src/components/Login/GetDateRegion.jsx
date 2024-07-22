@@ -2,10 +2,9 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../../Context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import axios from "axios";
 import * as yup from "yup";
 import arrow from "../../assets/images/arrow-right-white.png";
-
+import countryCityData from "./Countries_Cities";
 // Define the validation schema
 const validationSchema = yup.object({
   birthDate: yup.date().required("Birth date is required").nullable(),
@@ -16,6 +15,8 @@ const validationSchema = yup.object({
 const GetDateRegion = () => {
   const { userData, setUserData } = useContext(UserContext);
   const navigate = useNavigate();
+
+  const [selectedCountry, setSelectedCountry] = useState(userData.region?.country || "");
 
   const formik = useFormik({
     initialValues: {
@@ -33,6 +34,13 @@ const GetDateRegion = () => {
       navigate("/register/gender");
     },
   });
+
+  const handleCountryChange = (e) => {
+    const country = e.target.value;
+    setSelectedCountry(country);
+    formik.setFieldValue("country", country);
+    formik.setFieldValue("city", ""); // Reset city when country changes
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[80vh] min-w-screen px-4">
@@ -64,29 +72,37 @@ const GetDateRegion = () => {
           </p>
           <div className="flex flex-col w-full md:w-1/2">
             <div className="flex items-center border-b-2 border-white">
-              <input
-                type="text"
+              <select
                 name="country"
-                placeholder="Country"
                 value={formik.values.country}
-                onChange={formik.handleChange}
+                onChange={handleCountryChange}
                 onBlur={formik.handleBlur}
-                className="p-2 text-md md:text-xl text-center w-full bg-transparent text-white focus:outline-none"
-              />
+                className="p-2 text-md md:text-xl text-center w-full bg-black text-white focus:outline-none"
+              >
+                <option value="" label="Select country" />
+                {Object.keys(countryCityData).map((country) => (
+                  <option key={country} value={country} label={country} />
+                ))}
+              </select>
             </div>
             {formik.touched.country && formik.errors.country ? (
               <p className="text-red-500 mt-2">{formik.errors.country}</p>
             ) : null}
             <div className="flex items-center border-b-2 border-white mt-4">
-              <input
-                type="text"
+              <select
                 name="city"
-                placeholder="City"
                 value={formik.values.city}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className="p-2 text-md md:text-xl text-center w-full bg-transparent text-white focus:outline-none"
-              />
+                className="p-2 text-md md:text-xl text-center w-full bg-black text-white focus:outline-none"
+                disabled={!selectedCountry}
+              >
+                <option value="" label="Select city" />
+                {selectedCountry &&
+                  countryCityData[selectedCountry].map((city) => (
+                    <option key={city} value={city} label={city} />
+                  ))}
+              </select>
             </div>
             {formik.touched.city && formik.errors.city ? (
               <p className="text-red-500 mt-2">{formik.errors.city}</p>
