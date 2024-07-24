@@ -9,7 +9,7 @@ const Upload = () => {
   const fileInputRef1 = useRef(null);
   const fileInputRef2 = useRef(null);
   const [uploadedFiles, setUploadedFiles] = useState([null, null]);
-  //   const [uploadedFiles, setuploadedFiles] = useState(null);
+  const [uploadedFileURLs, setUploadedFileURLs] = useState([null, null]);
   const [alertMessage, setAlertMessage] = useState("");
 
   const handleUpload1 = () => {
@@ -24,9 +24,14 @@ const Upload = () => {
     const file = event.target.files[0];
     if (file) {
       console.log("Uploaded file 1:", file);
-      const newFileArray = uploadedFiles;
+      const newFileArray = [...uploadedFiles];
       newFileArray[0] = file;
       setUploadedFiles(newFileArray);
+
+      const newFileURLs = [...uploadedFileURLs];
+      newFileURLs[0] = URL.createObjectURL(file);
+      setUploadedFileURLs(newFileURLs);
+
       setAlertMessage("Face Image uploaded successfully!");
       setTimeout(() => setAlertMessage(""), 3000);
     }
@@ -36,21 +41,22 @@ const Upload = () => {
     const file = event.target.files[0];
     if (file) {
       console.log("Uploaded file 2:", file);
-      const newFileArray = uploadedFiles;
+      const newFileArray = [...uploadedFiles];
       newFileArray[1] = file;
       setUploadedFiles(newFileArray);
+
+      const newFileURLs = [...uploadedFileURLs];
+      newFileURLs[1] = URL.createObjectURL(file);
+      setUploadedFileURLs(newFileURLs);
+
       setAlertMessage("Body Image uploaded successfully!");
       setTimeout(() => setAlertMessage(""), 3000);
     }
   };
 
   const handleSubmit = () => {
-    if (
-      uploadedFiles.length == 2 &&
-      uploadedFiles[0] !== null &&
-      uploadedFiles[1] !== null
-    ) {
-      navigate("/images", {
+    if (uploadedFiles.length === 2 && uploadedFiles[0] && uploadedFiles[1]) {
+      navigate("/analyze", {
         state: { files: uploadedFiles },
       });
     } else {
@@ -75,13 +81,21 @@ const Upload = () => {
         </p>
       </div>
       <div className="flex flex-col justify-center border-dashed border-2 border-white rounded-lg p-5 my-5">
-        <div className="flex flex-col sm:flex-row items-center w-full  gap-4 mt-6 ">
+        <div className="flex flex-col sm:flex-row items-center w-full gap-4 mt-6 ">
           <div className="flex justify-center">
-            <img
-              src={scanhead}
-              alt="Scan"
-              className="w-40 h-auto sm:w-40 sm:h-auto"
-            />
+            {uploadedFileURLs[0] ? (
+              <img
+                src={uploadedFileURLs[0]}
+                alt="Uploaded Face"
+                className="w-40 h-auto sm:w-40 sm:h-auto"
+              />
+            ) : (
+              <img
+                src={scanhead}
+                alt="Scan"
+                className="w-40 h-auto sm:w-40 sm:h-auto"
+              />
+            )}
           </div>
           <div className="flex flex-col items-center w-full">
             <p className="text-center text-sm sm:text-base">
@@ -111,11 +125,19 @@ const Upload = () => {
 
         <div className="flex flex-col sm:flex-row items-center w-full gap-4 mt-6">
           <div className="flex justify-center">
-            <img
-              src={scan}
-              alt="Scan"
-              className="w-40 h-auto sm:w-40 sm:h-auto"
-            />
+            {uploadedFileURLs[1] ? (
+              <img
+                src={uploadedFileURLs[1]}
+                alt="Uploaded Body"
+                className="w-40 h-auto sm:w-40 sm:h-auto"
+              />
+            ) : (
+              <img
+                src={scan}
+                alt="Scan"
+                className="w-40 h-auto sm:w-40 sm:h-auto"
+              />
+            )}
           </div>
           <div className="flex flex-col items-center w-full">
             <p className="text-center text-sm sm:text-base">
