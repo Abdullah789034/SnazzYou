@@ -21,10 +21,9 @@ const Analysis = () => {
     const response = await axiosInstance.get("/v1/suggestions/general");
     console.log(response.data);
     if (response.data.success) {
-      navigate("/suggestions", {
-        state: { suggestion: response.data.data?.suggestion },
-      });
+      navigate(`/suggestions/${response.data.data?._id}`);
     }
+    //suggestions/66a1500e94953bc9e8341908
     setLoading(false);
   };
   return (

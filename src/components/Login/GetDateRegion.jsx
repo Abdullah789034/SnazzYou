@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import arrow from "../../assets/images/arrow-right-white.png";
-import { Country, City } from "country-state-city";
+import { Country, City, State } from "country-state-city";
 
 // Define the validation schema
 const validationSchema = yup.object({
@@ -22,7 +22,7 @@ const GetDateRegion = () => {
 
   useEffect(() => {
     if (selectedCountry) {
-      const citiesData = City.getCitiesOfCountry(selectedCountry);
+      const citiesData = State.getStatesOfCountry(selectedCountry);
       setCities(citiesData || []);
     }
   }, [selectedCountry]);
@@ -106,7 +106,7 @@ const GetDateRegion = () => {
                 className="p-2 text-md md:text-xl text-center w-full bg-black text-white focus:outline-none"
                 disabled={!selectedCountry}
               >
-                <option value="" label="Select city" />
+                <option value="" label="Select State" />
                 {cities.map((city) => (
                   <option key={city.name} value={city.name} label={city.name} />
                 ))}

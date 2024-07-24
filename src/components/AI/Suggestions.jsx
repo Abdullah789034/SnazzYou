@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-
 const Suggestions = () => {
   const location = useLocation();
   const [suggestions] = useState(location?.state?.suggestion);
@@ -15,12 +14,11 @@ const Suggestions = () => {
   }, []);
 
   const handleSubmit = () => {
-    navigate('/feedback')
-  }
+    navigate("/feedback");
+  };
 
   return (
     <>
-
       <h1 className="text-4xl font-semibold text-center my-16 mx-3">
         Some Fashion Suggestions for you
       </h1>
@@ -28,7 +26,10 @@ const Suggestions = () => {
         <SuggestedFeatures
           name="Style Suggestion"
           suggestion={suggestions?.overAllStyle}
-          image="https://i.ibb.co/0D90mnF/Untitled-design-6.png"
+          image={
+            suggestions?.image ||
+            "https://i.ibb.co/0D90mnF/Untitled-design-6.png"
+          }
         />
         <SuggestedFeatures
           name="HairStyle / HairCut"
@@ -69,7 +70,8 @@ const Suggestions = () => {
           onClick={handleSubmit}
         >
           Give Feedback ➔
-        </button>        </div>
+        </button>{" "}
+      </div>
     </>
   );
 };
