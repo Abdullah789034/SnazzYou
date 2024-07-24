@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../Context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import arrow from "../../assets/images/arrow-right-white.png";
-import countryCityData from "./Countries_Cities";
+import { Country, City } from "country-state-city";
+
 // Define the validation schema
 const validationSchema = yup.object({
   birthDate: yup.date().required("Birth date is required").nullable(),
@@ -17,6 +18,14 @@ const GetDateRegion = () => {
   const navigate = useNavigate();
 
   const [selectedCountry, setSelectedCountry] = useState(userData.region?.country || "");
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    if (selectedCountry) {
+      const citiesData = City.getCitiesOfCountry(selectedCountry);
+      setCities(citiesData || []);
+    }
+  }, [selectedCountry]);
 
   const formik = useFormik({
     initialValues: {
@@ -80,8 +89,8 @@ const GetDateRegion = () => {
                 className="p-2 text-md md:text-xl text-center w-full bg-black text-white focus:outline-none"
               >
                 <option value="" label="Select country" />
-                {Object.keys(countryCityData).map((country) => (
-                  <option key={country} value={country} label={country} />
+                {Country.getAllCountries().map((country) => (
+                  <option key={country.isoCode} value={country.isoCode} label={country.name} />
                 ))}
               </select>
             </div>
@@ -98,10 +107,9 @@ const GetDateRegion = () => {
                 disabled={!selectedCountry}
               >
                 <option value="" label="Select city" />
-                {selectedCountry &&
-                  countryCityData[selectedCountry].map((city) => (
-                    <option key={city} value={city} label={city} />
-                  ))}
+                {cities.map((city) => (
+                  <option key={city.name} value={city.name} label={city.name} />
+                ))}
               </select>
             </div>
             {formik.touched.city && formik.errors.city ? (
