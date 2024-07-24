@@ -17,7 +17,7 @@ import Upload from "./components/LandingPage/Upload.jsx";
 import Images from "./components/AI/Images.jsx";
 import ProtectedRoutes from "./components/ProtectedRoutes.jsx";
 import Loginn from "./components/Login/Loginn.jsx";
-import Dashboard from "./components/Dashboard.jsx";
+import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import Analysis from "./components/AI/Analysis.jsx";
 import Suggestions from "./components/AI/Suggestions.jsx";
 import Feedback from "./components/Feedback.jsx";

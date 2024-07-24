@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import line from "../assets/images/Line.png";
-import img from "../assets/images/avatar.png";
-import dashimg from "../assets/images/dash-img.png";
-import addImg from "../assets/images/AddImg.png";
-import { Link } from "react-router-dom";
-import axiosInstance from "../api/axios.provider"; // Import axiosInstance
-import PrevSuggestion from "./Suggestions/PrevSuggestion";
+import line from "../../assets/images/Line.png";
+import img from "../../assets/images/avatar.png";
+import axiosInstance from "../../api/axios.provider"; // Import axiosInstance
+import PrevSuggestion from "../Suggestions/PrevSuggestion";
+import UploadSection from "./UploadSection";
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
@@ -89,31 +87,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row mt-8">
-        <div className="border-white flex flex-col rounded-sm md:flex-row border-2 p-8 w-full md:w-3/4">
-          <div className="w-full md:w-3/4">
-            <p className="text-3xl font-semibold">Take New Suggestion</p>
-            <p className="mt-4 text-[#FFD1C1] text-lg md:text-xl lg:text-2xl">
-              Get personalized fashion advice tailored just for you. Whether
-              you're looking to refine your style, explore new trends, or find
-              the perfect outfit for any occasion, I'm here to help you look and
-              feel your best. Let's elevate your style together!
-            </p>
-          </div>
-          <div className="w-full md:w-1/4 mt-4 md:mt-0 flex justify-center items-center">
-            <Link to="/upload">
-              <img src={addImg} alt="Add" className="max-w-full h-auto" />
-            </Link>
-          </div>
-        </div>
-        <div className="w-full md:w-1/4 flex items-center justify-center mt-8 md:mt-0">
-          <img
-            src={dashimg}
-            alt="Dashboard Image"
-            className="max-w-full h-auto"
-          />
-        </div>
-      </div>
+      <UploadSection />
       <div className="mt-10">
         <PrevSuggestion />
       </div>
