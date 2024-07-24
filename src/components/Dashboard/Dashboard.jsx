@@ -52,13 +52,13 @@ const Dashboard = () => {
 
   return (
     <div className="p-4">
-      <div className="relative flex flex-col md:flex-row rounded-sm w-full p-8 border-white border-2">
-        <div className="absolute top-0 right-0 mt-2 mr-2 text-xl ">
+      <div className="relative flex flex-col md:flex-row rounded-lg w-full p-8 border-white border-2">
+        <div className="absolute top-0 right-0 mt-4 mr-4 text-xl text-right">
           <p>Since {new Date(user.dateOfBirth).getFullYear()}</p>
           <p>
             {new Date().getFullYear() -
-              new Date(user.dateOfBirth).getFullYear()}
-            .
+              new Date(user.dateOfBirth).getFullYear()}{" "}
+            years old
           </p>
         </div>
         <div className="flex items-center w-full">

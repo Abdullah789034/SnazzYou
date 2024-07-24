@@ -45,7 +45,7 @@ const PrevSuggestion = () => {
     const isLoopEnabled = suggestions.length > 3;
 
     const handleSuggestionClick = (id) => {
-        navigate(`/prev-suggestion/${id}`);
+        navigate(`/suggestions/${id}`);
     };
 
     return (
