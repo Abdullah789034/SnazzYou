@@ -24,12 +24,12 @@ const LandingPage = () => {
           </p>
           <div className="flex gap-4 m-4 md:m-8">
             <Link to="/register">
-              <button className="p-4 rounded-lg bg-[#0A5891] text-white font-bold">
+              <button className="p-4 rounded-lg bg-[#c71743] text-white font-bold">
                 Get a Suggestion
               </button>
             </Link>
             <Link to="/login">
-              <button className="p-4 px-6 rounded-lg bg-transparent text-white font-bold border-white border-2">
+              <button className="p-4 px-6 rounded-lg bg-transparent text-white hover:bg-white hover:text-black font-bold border-white border-2">
                 Log in
               </button>
             </Link>
