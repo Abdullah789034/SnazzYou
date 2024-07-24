@@ -14,8 +14,13 @@ const Suggestions = () => {
     }
   }, []);
 
+  const handleSubmit = () => {
+    navigate('/feedback')
+  }
+
   return (
     <>
+
       <h1 className="text-4xl font-semibold text-center my-16 mx-3">
         Some Fashion Suggestions for you
       </h1>
@@ -58,6 +63,13 @@ const Suggestions = () => {
           />
         )}
       </div>
+      <div className="flex float-right mr-10">
+        <button
+          className="bg-transparent text-white border-white border-2 px-6 py-3 mt-6 rounded shadow-sm hover:bg-white hover:text-black duration-150 font-semibold"
+          onClick={handleSubmit}
+        >
+          Give Feedback ➔
+        </button>        </div>
     </>
   );
 };

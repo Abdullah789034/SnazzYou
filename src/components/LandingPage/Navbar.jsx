@@ -13,10 +13,16 @@ const Navbar = () => {
       setLoggedIn(false);
     }
   }, []);
+
+  const getHomeLink = () => {
+    const token = localStorage.getItem("jwt-token");
+    return token ? "/dashboard" : "/";
+  };
+
   return (
     <div className="h-auto  bg-black">
       <div className="p-6 flex justify-between">
-        <Link to="/">
+        <Link to={getHomeLink()}>
           <img src={logo} width={175} className="h-auto" alt="Logo" />
         </Link>
 
